@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login Biru</title>
+    <style>
+        /* CSS untuk Styling */
+        :root {
+            /* Definisi Warna Biru */
+            --blue-bg: #E3F2FD;        /* Biru Muda Cerah untuk latar belakang */
+            --blue-primary: #2196F3;   /* Biru Primer (seperti langit) untuk tombol/elemen utama */
+            --blue-shadow: #90CAF9;    /* Biru Sedang untuk bayangan/aksen */
+            --text-color: #333333;      /* Warna teks gelap */
+            --white-color: #ffffff;    /* Warna putih */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--blue-bg); /* Latar belakang Biru Muda */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bayangan yang lebih dalam */
+            width: 380px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: var(--blue-primary);
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--blue-shadow);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3); /* Efek fokus biru muda */
+            outline: none;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--blue-primary); /* Warna Biru Primer */
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .login-button:hover {
+            background-color: #1E88E5; /* Sedikit lebih gelap saat di-hover */
+        }
+        
+        .login-button:active {
+            transform: scale(0.99); /* Efek klik */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>🔑 Masuk ke Akun Anda</h2>
+        <form>
+            <div class="input-group">
+                <label for="username">Nama Pengguna (Username)</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan Nama Pengguna" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Kata Sandi (Password)</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan Kata Sandi" required>
+            </div>
+
+            <button type="submit" class="login-button">Login Sekarang</button>
+        </form>
+    </div>
+
+</body>
+</html>
