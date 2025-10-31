@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        /* --- Gaya Umum & Latar Belakang --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Kontainer Login --- */
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* --- Grup Input (Label & Input) --- */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+        }
+
+        /* --- Tombol Login --- */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        /* --- Pesan Error --- */
+        .error-message {
+            color: #e53e3e;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none; /* Sembunyikan secara default */
+        }
+
+        /* --- Tautan Tambahan --- */
+        .extra-links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .extra-links a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsif untuk Layar Kecil --- */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Selamat Datang!</h2>
+        <p style="color: #777; margin-bottom: 25px;">Silakan masuk ke akun Anda.</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan username Anda" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password Anda" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Masuk</button>
+            
+            <p class="error-message" id="errorMessage">Username atau password tidak boleh kosong!</p>
+        </form>
+
+        <div class="extra-links">
+            <p>Belum punya akun? <a href="#">Daftar</a></p>
+            <p><a href="#">Lupa password?</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Dapatkan elemen-elemen dari DOM
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Tambahkan event listener untuk saat form disubmit
+        loginForm.addEventListener('submit', function(event) {
+            // Mencegah form dari pengiriman default (agar halaman tidak reload)
+            event.preventDefault();
+
+            // Ambil nilai dari input
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            // Validasi sederhana
+            if (username === '' || password === '') {
+                // Tampilkan pesan error jika ada yang kosong
+                errorMessage.style.display = 'block';
+            } else {
+                // Sembunyikan pesan error jika semua terisi
+                errorMessage.style.display = 'none';
+                
+                // --- SIMULASI LOGIN BERHASIL ---
+                // Di aplikasi nyata, di sinilah Anda akan mengirim data ke server.
+                alert(`Login berhasil!\nUsername: ${username}`);
+                
+                // Contoh: Arahkan ke halaman dashboard setelah login
+                // window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+
+</body>
+</html>
